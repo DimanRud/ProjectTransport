@@ -1,0 +1,235 @@
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.83);
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 30px 10px;
+
+}
+
+.popup__content {
+  background-color: #FEFFF5;
+  color: #272727;
+  max-width: 100%;
+  padding: 88px 80px 72px 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: translate(0px, -100%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+
+}
+
+.popup.open .popup__content {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.popup__title {
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 140%;
+}
+
+.popup__text {
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+.popup__form-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.popup__label {
+  margin-bottom: 24px;
+}
+
+.popup__input {
+  border-radius: 50px;
+  border: 1px solid black;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 18px;
+  padding: 20px 292px 20px 36px;
+  margin-bottom: 20px;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+
+}
+.popup__input._error {
+    border: 1px solid #F75C53;
+  }
+.popup__check {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.popup__t {
+  display: flex;
+  align-items: center;
+  color: #969995;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.popup__t::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.popup__t .popup__color {
+  border-bottom: 1px solid #93AA00;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  margin-left: 7px;
+  color: #93AA00;
+}
+
+.popup__check._error .popup__t::before {
+  border: 1px solid #F75C53;
+}
+
+input:not(:disabled):not(:checked)+span:hover::before {
+  border-color: #93AA00;
+}
+
+input:not(:disabled):active+span::before {
+  background-color: transparent;
+  border-color: #93AA00;
+}
+
+
+
+input:focus:not(:checked)+span::before {
+  border-color: #93AA00;
+}
+
+input:checked+span::before {
+  border-color: #93AA00;
+  background-color: #93AA00;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.popup__btn {
+  margin-bottom: 30px;
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #93AA00;
+    cursor: pointer;
+    padding: 20px 220px;
+
+    &:hover {
+      border: 1px solid transparent;
+      background: #CEEA19;
+      color: black;
+    }
+  }
+}
+
+.popup__subtitle {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #272727;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 140%;
+}
+
+.popup__line-phone {
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  text-transform: uppercase;
+
+  /* Тёмный цвет текста */
+
+  color: #272727;
+}
+
+.popup__close {
+  position: absolute;
+  top: 0;
+  right: -231px;
+}
+
+.popup__input--textarea {
+  border-radius: 50px;
+  border: 1px solid black;
+  background-color: #f9fbee;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 18px;
+  padding: 20px 292px 20px 36px;
+  margin-bottom: 20px;
+  resize: none;
+  padding: 26px 172px 100px 36px;
+  border-radius: 50px;
+
+  &:focus {
+    outline: none;
+  }
+}

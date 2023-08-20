@@ -1,0 +1,23 @@
+.footer {
+  margin-top: 100px;
+  background-color: #008B8B;
+  padding-top: 60px;
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__item {
+  max-width: 50%;
+}
+
+.footer__title-text {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.footer__text {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
